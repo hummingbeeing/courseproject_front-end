@@ -33,9 +33,9 @@ The project is a tarot reading website, where users can experience an online ver
 
 ### Tarot Card APIs
 
-https://www.kaggle.com/datasets/lsind18/tarot-json
-https://github.com/krates98/tarotcardapi
-https://github.com/sheoak/tarot-deck
+- https://www.kaggle.com/datasets/lsind18/tarot-json
+- https://github.com/krates98/tarotcardapi
+- https://github.com/sheoak/tarot-deck
 
 ---
 
