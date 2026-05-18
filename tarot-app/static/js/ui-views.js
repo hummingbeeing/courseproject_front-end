@@ -1,0 +1,69 @@
+console.log("ui-views.js running");
+
+let isMenuCollapsed = false;
+
+
+function renderNavbar() {
+    const nav = document.querySelector("#navbar");
+    if (!nav) return;
+
+    nav.innerHTML = "";
+
+    const menuButton = document.createElement("button");
+    menuButton.className = "Navbar-menuToggle";
+    menuButton.innerHTML = "☰ MENU";
+    menuButton.setAttribute("aria-label", "Toggle navigation menu");
+
+    menuButton.addEventListener("click", toggleHamburger);
+
+    menuButton.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            toggleHamburger();
+        }
+    });
+
+    nav.append(menuButton);
+
+    const linksWrapper = document.createElement("div");
+    linksWrapper.className = "Navbar-links";
+
+    const links = [
+        { label: "Home", href: "index.html" },
+        { label: "Tarot Reading", href: "reading.html" },
+        { label: "Flash Cards", href: "flashcards.html" }
+    ];
+
+    links.forEach(link => {
+        const a = document.createElement("a");
+        a.href = link.href;
+        a.textContent = link.label;
+        a.className = "Navbar-button";
+        linksWrapper.appendChild(a);
+    });
+
+    nav.appendChild(linksWrapper);
+
+    isMenuCollapsed = false;
+    linksWrapper.classList.remove("collapsed");
+}
+
+
+function toggleHamburger() {
+    const nav = document.querySelector("#navbar");
+    if (!nav) return;
+
+    const linksWrapper = nav.querySelector(".Navbar-links");
+    if (!linksWrapper) return;
+
+    isMenuCollapsed = !isMenuCollapsed;
+
+    linksWrapper.classList.toggle("collapsed", isMenuCollapsed);
+}
+
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderNavbar);
+} else {
+    renderNavbar();
+}
+
