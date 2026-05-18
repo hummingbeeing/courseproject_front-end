@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your Tarot Reading</title>
+
+<link rel="stylesheet" href="static/css/styles.css">
+<link rel="stylesheet" href="static/css/mobile-ui.css">
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gradient"
+      x-data="revealApp()"
+      x-init="init()">
+
+
+<header id="navbar" class="Navbar"></header>
+
+<main class="ReadingPage">
+
+    <h1 class="Hero-title">Your Reading</h1>
+
+
+    <template x-if="!cards.length">
+        <p class="LoadingText">Loading your reading...</p>
+    </template>
+
+
+    <div class="reveal-container">
+
+        <template x-for="card in cards" :key="card.id">
+
+            <div class="reveal-table">
+
+
+                <div class="reveal-left">
+
+                    <img
+                        :src="card.image"
+                        :alt="card.name"
+                        class="CardRevealImage"
+                    >
+
+                </div>
+
+
+                <div class="reveal-right">
+
+                    <h2 class="CardTitle" x-text="card.name"></h2>
+
+                    <p class="MeaningText">
+                        <strong>Upright:</strong>
+                        <span x-text="card.meaning_up"></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </template>
+
+    </div>
+
+
+    <div style="margin-top: 30px;">
+
+        <h2 class="SectionTitle">The card you selected</h2>
+
+        <textarea
+            class="SpreadSelect"
+            x-model="prompt"
+            rows="6"
+        ></textarea>
+
+    </div>
+
+</main>
+
+
+<script src="static/js/ui-views.js"></script>
+<script src="static/js/csv-loader.js"></script>
+<script src="static/js/reveal.js"></script>
+
+
+<script>
+    renderNavbar();
+</script>
+
+</body>
+</html>

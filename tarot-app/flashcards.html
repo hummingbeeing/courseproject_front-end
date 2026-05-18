@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tarot Flash Cards</title>
+
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+    <script defer src="static/js/csv-loader.js"></script>
+    <script defer src="static/js/ui-views.js"></script>
+    <script defer src="static/js/flashcards.js"></script>
+</head>
+
+<body class="bg-gradient" onload="initFlashcards(); renderNavbar();">
+
+
+<header id="navbar" class="Navbar"></header>
+
+<main class="FlashPage">
+
+    <h1 class="PageTitle">Flash Card</h1>
+
+
+    <div style="text-align:center; margin-top:20px;">
+        <img id="card_image"
+             style="width:260px; height:420px; object-fit:contain; border-radius:12px;" />
+    </div>
+
+
+    <div style="margin-top:20px;">
+        <button class="DrawButton" onclick="showMeaning()">
+            Show Meaning
+        </button>
+    </div>
+
+
+    <div style="margin-top:20px;">
+        <h2 id="card_name"></h2>
+        <div id="card_meaning"></div>
+    </div>
+
+
+    <div style="margin-top:30px;">
+        <button class="NextButton" onclick="nextCard()">
+            Next Card
+        </button>
+    </div>
+
+</main>
+
+</body>
+</html>
+
+
