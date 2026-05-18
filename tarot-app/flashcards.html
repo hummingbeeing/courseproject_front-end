@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarot Flash Cards</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="static/css/styles.css">
+<link rel="stylesheet" href="static/css/mobile-ui.css">
+
+<!-- Alpine -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- JS -->
+<script defer src="static/js/ui-views.js"></script>
+<script defer src="static/js/flashcards.js"></script>
+
+</head>
+
+<body class="bg-gradient text-white">
+
+<header id="navbar" class="Navbar"></header>
+
+<main
+    x-data="flashCardApp()"
+    x-init="init()"
+    class="FlashPage"
+>
+
+    <h1 class="PageTitle">Flash Cards</h1>
+
+    <!-- FLASH CARD -->
+    <div
+        class="flash-card"
+        @click="flip()"
+        @keydown.enter="flip()"
+        tabindex="0"
+    >
+
+        <div
+            class="flash-inner"
+            :class="{ 'flipped': flipped }"
+        >
+
+            <!-- FRONT -->
+            <div class="flash-front">
+
+                <template x-if="card">
+                    <img
+                        :src="card.image"
+                        :alt="card.name"
+                        class="CardImage"
+                    >
+                </template>
+
+            </div>
+
+            <!-- BACK -->
+            <div class="flash-back">
+
+                <template x-if="card">
+                    <div>
+
+                        <h2 class="CardTitle" x-text="card.name"></h2>
+
+                        <p class="MeaningText">
+                            <strong>Upright:</strong>
+                            <span x-text="card.meaning_up"></span>
+                        </p>
+
+                        <p class="MeaningText">
+                            <strong>Reversed:</strong>
+                            <span x-text="card.meaning_rev"></span>
+                        </p>
+
+                    </div>
+                </template>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- NEXT BUTTON -->
+    <button
+        @click="nextCard()"
+        class="NextButton"
+    >
+        Next Card
+    </button>
+
+</main>
+
+<!-- NAVBAR INIT -->
+<script>
+    renderNavbar();
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Single Card Reading</title>
+
+<link rel="stylesheet" href="static/css/styles.css">
+<link rel="stylesheet" href="static/css/mobile-ui.css">
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gradient"
+      x-data="singleCardApp()"
+      x-init="init()">
+
+<!-- NAVBAR -->
+<header id="navbar" class="Navbar"></header>
+
+<main class="ReadingPage">
+
+    <h1 class="Hero-title">Single Card Reading</h1>
+
+    <p class="Hero-description">
+        Select one card for your reading.
+    </p>
+
+    <!-- CARD GRID -->
+    <div class="card-grid">
+
+        <template x-for="card in tiles" :key="card.id">
+
+            <div class="CardWrapper">
+
+                <div
+                    class="tarot-card"
+                    :class="{ 'selected': isSelected(card) }"
+                    @click="toggle(card)"
+                >
+
+                    <div class="tarot-inner">
+
+                        <!-- FRONT (card back) -->
+                        <div class="tarot-front">
+                            <img
+                                src="static/images/tarot-back.jpg"
+                                alt="Tarot card back"
+                                class="CardImage"
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </template>
+
+    </div>
+
+    <!-- REVEAL BUTTON -->
+    <div style="margin-top: 30px;">
+        <button class="DrawButton" @click="reveal()">
+            REVEAL
+        </button>
+    </div>
+
+</main>
+
+<!-- SCRIPTS -->
+<script src="static/js/ui-views.js"></script>
+<script src="static/js/singlecard.js"></script>
+
+<!-- FIX: ensure navbar renders consistently -->
+<script>
+    renderNavbar();
+</script>
+
+</body>
+</html>
+
