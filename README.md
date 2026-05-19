@@ -3,7 +3,7 @@
 ---
 ### Live Link
 
-https://hummingbeeing.github.io/courseproject_front-end/tarot-app/index.htmlLinks to an external site.
+https://hummingbeeing.github.io/courseproject_front-end/tarot-app/index.html
 
 ---
 ### URL to GitHub Repository Link
