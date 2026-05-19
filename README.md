@@ -1,4 +1,10 @@
-# Course Project: Project Specs
+# Course Project: Tart Card Web Application
+
+---
+### Live Link
+
+https://hummingbeeing.github.io/courseproject_front-end/tarot-app/index.htmlLinks to an external site.
+
 ---
 ### URL to GitHub Repository Link
 
@@ -26,65 +32,4 @@ The project is a tarot reading website, where users can experience an online ver
 
 - When a user selects flash card mode, the app will show an image of the card that is randomly generated. Clicking on the image will reveal the card meaning.
 
-
----
-
-## 4. FRAMEWORKS, APIs, and DATA
-
-### Tarot Card APIs
-
-- https://www.kaggle.com/datasets/lsind18/tarot-json
-- https://github.com/krates98/tarotcardapi
-- https://github.com/sheoak/tarot-deck
-
----
-
-## 5. Mock Up
-
-Flow: 
-Home Page → Select Mode: Tarot Reading or Flash Card
-
-Tarot Reading: Select Deck → Select type of reading → Select card based on type of reading → Reveal selected cards → Return Home
-
-Flash Card: Front of Card → Back of Card → Next Card or Home
-
----
-- ### Page 1: Home Page
-    
-    <img src="mockup/Mockup1.png" width="700"/>
-
----
-- ### Page 2: Choose between two features: Tarot Reading or Flash Cards
-
-    <img src="mockup/Mockup2.png" width="700"/>
-
----
-- ### Page 3: Tarot Reading: Select Deck
-
-    <img src="mockup/Mockup3.png" width="700"/>
-
----
-- ### Page 4: Select type of reading
-    
-    <img src="mockup/Mockup4.png" width="700"/>
-
----
-- ### Page 5: Select card based on type of reading
-
-    <img src="mockup/Mockup5.png" width="700"/>
-
----
-- ### Page 6: Reveal selected cards → Return Home
-
-    <img src="mockup/Mockup6.png" width="700"/>
-
----
-- ### Page 7: Flash Card Front
-    
-    <img src="mockup/Mockup7.png" width="700"/>
-
----
-- ### Page 8: Flash Card Back
-    
-    <img src="mockup/Mockup8.png" width="700"/>
 
